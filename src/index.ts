@@ -1,7 +1,7 @@
 import * as core from '@actions/core'
 import { Octokit } from "octokit";
 import { createAppAuth } from "@octokit/auth-app";
-const ProxyAgent = require('http-proxy-agent');
+const ProxyAgent = require('https-proxy-agent');
 
 const trigger = async () => {
     const appId = core.getInput('appId');
@@ -14,7 +14,7 @@ const trigger = async () => {
 
     const octokit = new Octokit({
         request: {
-            agent: new ProxyAgent(process.env.HTTP_PROXY),
+            agent: new ProxyAgent(process.env.HTTPS_PROXY),
         },
         authStrategy: createAppAuth,
         auth: {
