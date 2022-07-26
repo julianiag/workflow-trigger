@@ -14,7 +14,7 @@ const trigger = async () => {
 
     const octokit = new Octokit({
         request: {
-            agent: new ProxyAgent(),
+            agent: new ProxyAgent(process.env.HTTP_PROXY),
         },
         authStrategy: createAppAuth,
         auth: {
