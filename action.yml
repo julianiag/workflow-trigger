@@ -1,5 +1,8 @@
 name: 'Workflow trigger'
 description: 'Trigger a github action workflow in a repo'
+branding:
+  icon: 'chevron-right'
+  color: 'blue'
 inputs:
   appId:  # id of a github app
     description: 'Github app id'
