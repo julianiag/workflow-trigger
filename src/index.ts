@@ -20,10 +20,11 @@ const trigger = async () => {
         },
     });
 
-    console.log(`Triggering workflow ${workflowId} in ${owner}/${repo}`);
+    core.debug(`Triggering workflow ${workflowId} in ${owner}/${repo}`);
     await octokit.request(`POST /repos/${owner}/${repo}/actions/workflows/${workflowId}/dispatches`, {
         ref
     })
+    core.debug('Successfully triggered the workflow');
 }
 
 trigger().catch(error => {
