@@ -1,6 +1,7 @@
 import * as core from '@actions/core'
 import { Octokit } from "octokit";
 import { createAppAuth } from "@octokit/auth-app";
+import ProxyAgent from "proxy-agent";
 
 const trigger = async () => {
     const appId = core.getInput('appId');
@@ -12,6 +13,9 @@ const trigger = async () => {
     const ref = core.getInput('ref') ?? 'main';
 
     const octokit = new Octokit({
+        request: {
+            agent: new ProxyAgent(),
+        },
         authStrategy: createAppAuth,
         auth: {
             appId,
