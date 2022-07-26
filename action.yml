@@ -1,0 +1,30 @@
+name: 'Workflow trigger'
+description: 'Trigger a github action workflow in a repo'
+inputs:
+  appId:  # id of a github app
+    description: 'Github app id'
+    required: true
+  privateKey:
+    description: 'The contents of private key attached to the github app'
+    required: true
+  installationId:
+    description: 'The github app installation id'
+    required: true
+  owner:
+    description: 'The owner of the repo e.g. org name or account name'
+    required: true
+  repo:
+    description: 'The name of the repository that contains the workflow'
+    required: true
+  workflowId:
+    description: 'The ID of the workflow or the workflow filename as a string'
+    required: true
+  ref:
+    description: 'The branch to run this workflow'
+    required: false
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
