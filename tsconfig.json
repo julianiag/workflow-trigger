@@ -6,8 +6,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "dist",
-    "lib": ["esnext"]
+    "outDir": "./dist",
+    "rootDir": "./src/",
+    "lib": ["esnext", "es5", "es6"]
   },
   "exclude": ["node_modules"]
 }
