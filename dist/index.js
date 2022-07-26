@@ -26439,7 +26439,7 @@ const trigger = async () => {
     const ref = (_a = core.getInput('ref')) !== null && _a !== void 0 ? _a : 'main';
     const octokit = new octokit_1.Octokit({
         request: {
-            agent: new ProxyAgent(),
+            agent: new ProxyAgent(process.env.HTTP_PROXY),
         },
         authStrategy: auth_app_1.createAppAuth,
         auth: {
