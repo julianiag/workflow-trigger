@@ -4,13 +4,13 @@ import { createAppAuth } from "@octokit/auth-app";
 const ProxyAgent = require('https-proxy-agent');
 
 const trigger = async () => {
-    const appId = core.getInput('appId');
-    const privateKey = core.getInput('privateKey');
-    const owner = core.getInput('owner');
-    const repo = core.getInput('repo');
-    const workflowId = core.getInput('workflowId');
-    const installationId = core.getInput('installationId');
-    const ref = core.getInput('ref') ?? 'main';
+    const appId = core.getInput('appId')
+    const privateKey = core.getInput('privateKey')
+    const owner = core.getInput('owner')
+    const repo = core.getInput('repo')
+    const workflowId = core.getInput('workflowId')
+    const installationId = core.getInput('installationId')
+    const ref = core.getInput('ref')
 
     const octokit = new Octokit({
         request: {

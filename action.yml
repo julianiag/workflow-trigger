@@ -25,6 +25,7 @@ inputs:
   ref:
     description: 'The branch to run this workflow'
     required: false
+    default: 'main'
 outputs:
   time: # id of output
     description: 'The time we greeted you'

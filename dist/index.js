@@ -26488,14 +26488,13 @@ const octokit_1 = __nccwpck_require__(7467);
 const auth_app_1 = __nccwpck_require__(7541);
 const ProxyAgent = __nccwpck_require__(7219);
 const trigger = async () => {
-    var _a;
     const appId = core.getInput('appId');
     const privateKey = core.getInput('privateKey');
     const owner = core.getInput('owner');
     const repo = core.getInput('repo');
     const workflowId = core.getInput('workflowId');
     const installationId = core.getInput('installationId');
-    const ref = (_a = core.getInput('ref')) !== null && _a !== void 0 ? _a : 'main';
+    const ref = core.getInput('ref');
     const octokit = new octokit_1.Octokit({
         request: {
             agent: new ProxyAgent(process.env.HTTPS_PROXY),
